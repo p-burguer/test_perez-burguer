@@ -162,7 +162,7 @@ function render(){
   $('#menu').innerHTML=cats.map(c=>'<h2 class="cat" id="c_'+esc(c)+'">'+esc(c)+'</h2><div class="items">'+M.products.filter(p=>p.cat===c).map(item).join('')+'</div>').join('');
   const last=store.get('last',null);
   $('#againBox').innerHTML=last&&!cart.length&&last.items.some(i=>P(i.id))?'<button class="again" onclick="repeat()"><span style="font-size:26px">🔁</span><span>Repetir mi último pedido<br><small class="mut" style="font-weight:500">'+esc(last.items.filter(i=>P(i.id)).map(i=>i.qty+'× '+P(i.id).name).join(', ')).slice(0,90)+'</small></span></button>':'';
-  $('#foot').innerHTML='<b>'+esc(M.negocio)+'</b><br>'+esc(M.direccion)+'<br>'+(TASA?'Precios en dólares. Bs calculados a la tasa '+TASA_SRC+': '+bsf(TASA)+' por $.':'Precios en dólares. Puedes pagar en bolívares a la tasa del día.')+'<br><a class="lnk" href="caja/">Acceso del personal</a>';
+  $('#foot').innerHTML='<b>'+esc(M.negocio)+'</b><br>'+esc(M.direccion)+'<br>'+(TASA?'Precios en dólares. Bs calculados a la tasa '+TASA_SRC+': '+bsf(TASA)+' por $.':'Precios en dólares. Puedes pagar en bolívares a la tasa del día.')+'';
   if(TEST&&!document.getElementById('testBan')){const d=document.createElement('div');d.id='testBan';d.style.cssText='position:sticky;top:0;z-index:30;background:#FFE14D;color:#0A0E20;font-weight:700;text-align:center;padding:8px;font-size:14px';d.textContent='MODO PRUEBA · los pedidos se envían a +'+TEST.replace(/\D/g,'');document.body.prepend(d)}
   bar()}
 function item(p){const q=(cart.find(i=>i.id===p.id)||{}).qty||0;
