@@ -1,0 +1,136 @@
+{
+ "app": "perez-burguer-menu",
+ "version": 1,
+ "updatedAt": "2026-11-02T13:05:33.415Z",
+ "negocio": "Pérez Burguer",
+ "whatsapp": "04245860069",
+ "direccion": "Carrera 17 entre calles 50 y 51, Barquisimeto",
+ "instagram": "@perez_burguer_14",
+ "tasa": 0,
+ "tasaFecha": "",
+ "metodos": [
+  "Efectivo $",
+  "Efectivo Bs",
+  "Pago móvil",
+  "Punto de venta",
+  "Zelle"
+ ],
+ "cats": [
+  "Promos",
+  "Hamburguesas",
+  "Perros",
+  "Pepitos",
+  "Acompañantes",
+  "Bebidas"
+ ],
+ "products": [
+  {
+   "id": "b2dc3a6e-d53b-4c70-be4e-3d36c383484d",
+   "name": "Promo 3 hamburguesas + refresco 1 L",
+   "desc": "3 hamburguesas de chuleta ahumada + refresco de 1 litro",
+   "price": 12,
+   "cat": "Promos",
+   "emoji": "🎉",
+   "agotado": false
+  },
+  {
+   "id": "a3be18da-830a-47bb-b737-dcc100e36a93",
+   "name": "Promo 3 burgers pollo crispy + refresco 1 L",
+   "desc": "3 burgers de pollo crispy + refresco de 1 litro",
+   "price": 10,
+   "cat": "Promos",
+   "emoji": "🎉",
+   "agotado": false
+  },
+  {
+   "id": "d1394d6f-4a16-4809-ac52-fa29656f1841",
+   "name": "Triple proteína",
+   "desc": "Pollo crispy, chuleta ahumada y carne de hamburguesa. ¡La más poderosa!",
+   "price": 5.5,
+   "cat": "Hamburguesas",
+   "emoji": "🍔",
+   "agotado": false
+  },
+  {
+   "id": "489b5a73-65ea-48cf-a207-849e84132dc6",
+   "name": "Hamburguesa clásica",
+   "desc": "Carne jugosa, ingredientes frescos y mucho sabor",
+   "price": 1.5,
+   "cat": "Hamburguesas",
+   "emoji": "🍔",
+   "agotado": false
+  },
+  {
+   "id": "1d8ebb24-193c-48be-a091-c0f157fc4e01",
+   "name": "Hamburguesa de chuleta ahumada",
+   "desc": "",
+   "price": 3,
+   "cat": "Hamburguesas",
+   "emoji": "🍔",
+   "agotado": false
+  },
+  {
+   "id": "1952f1a3-c011-4ae4-af30-c3c279cebbcd",
+   "name": "Burger pollo crispy",
+   "desc": "",
+   "price": 3,
+   "cat": "Hamburguesas",
+   "emoji": "🍔",
+   "agotado": false
+  },
+  {
+   "id": "663763d0-84cd-483e-bef6-ba3734b87c70",
+   "name": "Perro clásico",
+   "desc": "Clásico, sabroso y siempre delicioso",
+   "price": 1,
+   "cat": "Perros",
+   "emoji": "🌭",
+   "agotado": false
+  },
+  {
+   "id": "21db4c8c-2370-4e7a-80bd-3c82eb141889",
+   "name": "Perro especial",
+   "desc": "",
+   "price": 2,
+   "cat": "Perros",
+   "emoji": "🌭",
+   "agotado": false
+  },
+  {
+   "id": "0d45c7db-b5a0-4da0-80e6-a3ade46f5319",
+   "name": "Pepito de carne",
+   "desc": "Grande, lleno y lleno de sabor",
+   "price": 5,
+   "cat": "Pepitos",
+   "emoji": "🥖",
+   "agotado": false
+  },
+  {
+   "id": "56b77bb1-e48a-4a36-8285-7f02e372d615",
+   "name": "Papas fritas",
+   "desc": "",
+   "price": 2,
+   "cat": "Acompañantes",
+   "emoji": "🍟",
+   "agotado": false
+  },
+  {
+   "id": "8941cebf-59fa-4662-bcce-3bda07fe7332",
+   "name": "Refresco 350 ml",
+   "desc": "",
+   "price": 1,
+   "cat": "Bebidas",
+   "emoji": "🥤",
+   "agotado": false
+  },
+  {
+   "id": "2b48212c-5fe6-49ed-a972-4f79db6d8d86",
+   "name": "Refresco 1 L",
+   "desc": "",
+   "price": 2,
+   "cat": "Bebidas",
+   "emoji": "🥤",
+   "agotado": false
+  }
+ ]
+}

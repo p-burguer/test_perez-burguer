@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0A0E20">
+<title>Pérez Burguer · Haz tu pedido</title>
+<meta name="description" content="Pide en Pérez Burguer: hamburguesas, perros y pepitos en Barquisimeto. Elige tu pedido y envíalo por WhatsApp.">
+<meta property="og:title" content="Pérez Burguer · Haz tu pedido">
+<meta property="og:description" content="Hamburguesas, perros y pepitos. Arma tu pedido y envíalo por WhatsApp. Carrera 17 entre calles 50 y 51, Barquisimeto.">
+<meta property="og:image" content="icons/icon-512.png">
+<link rel="icon" href="icons/icon-192.png">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500;600;700&family=Kalam:wght@700&display=swap" rel="stylesheet">
+<style>
+:root{--navy:#0A0E20;--navy2:#121a3a;--blue:#1F4FE0;--blue2:#163BB0;--gold:#F5B521;--red:#E23B2E;--green:#25D366;--bg:#F3F5FA;--line:#E2E6EF;--ink:#141826;--mut:#6B7280}
+*{box-sizing:border-box;-webkit-tap-highlight-color:transparent}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:system-ui,-apple-system,"Segoe UI",Roboto,Arial,sans-serif;line-height:1.4;padding-bottom:110px}
+button,input,select,textarea{font:inherit;color:inherit}
+button{cursor:pointer}
+.d{font-family:Oswald,"Arial Narrow",Impact,sans-serif;text-transform:uppercase;letter-spacing:.02em}
+/* hero */
+.hero{background:radial-gradient(120% 90% at 80% 0%,#1d3bb0 0%,#0f1a4a 40%,var(--navy) 75%);color:#fff;padding:22px 16px 20px;padding-top:calc(22px + env(safe-area-inset-top));position:relative;overflow:hidden;border-bottom:4px solid var(--blue);border-radius:0 0 22px 22px}
+
+.hero .hin{max-width:900px;margin:0 auto;display:flex;gap:16px;align-items:center;position:relative;z-index:1}
+.hero img{width:96px;height:96px;border-radius:50%;box-shadow:0 0 0 3px var(--blue),0 10px 30px rgba(0,0,0,.4);flex:none}
+.hero h1{margin:0;font-family:Oswald,Impact,sans-serif;font-size:clamp(30px,8vw,46px);line-height:.95;text-transform:uppercase}
+.hero h1 span{display:block;font-family:Kalam,cursive;text-transform:none;color:var(--gold);font-size:.62em;margin-top:4px}
+.hero p{margin:8px 0 0;color:#C9D6FF;font-size:14px}
+.info{max-width:900px;margin:12px auto 0;display:flex;gap:8px;flex-wrap:wrap;position:relative;z-index:1}
+.info a,.info span{color:#fff;text-decoration:none;font-size:13px;font-weight:600;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.15);border-radius:99px;padding:6px 12px}
+main{max-width:900px;margin:0 auto;padding:18px 14px}
+.again{width:100%;display:flex;align-items:center;gap:12px;background:#fff;border:2px dashed var(--blue);color:var(--blue2);border-radius:14px;padding:12px 14px;font-weight:700;margin-bottom:14px;text-align:left}
+.chips{position:sticky;top:0;z-index:10;background:var(--bg);display:flex;gap:8px;overflow-x:auto;padding:10px 0;margin:0 0 6px;scrollbar-width:none}
+.chips::-webkit-scrollbar{display:none}
+.chip{flex:none;border:1px solid var(--line);background:#fff;border-radius:99px;padding:8px 15px;font-weight:700;font-size:14px}
+.chip.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+h2.cat{font-family:Oswald,Impact,sans-serif;text-transform:uppercase;font-size:24px;margin:18px 0 10px;display:flex;align-items:center;gap:10px;scroll-margin-top:60px}
+h2.cat:after{content:"";flex:1;height:3px;background:linear-gradient(90deg,var(--blue),transparent);border-radius:3px}
+.items{display:grid;grid-template-columns:1fr;gap:10px}
+@media(min-width:640px){.items{grid-template-columns:1fr 1fr}}
+.it{background:#fff;border:1px solid var(--line);border-radius:16px;padding:14px;display:flex;gap:12px;align-items:center}
+.it.promo{border:2px solid var(--gold);background:linear-gradient(150deg,#fff 55%,#FFF4D6)}
+.it .em{font-size:38px;width:56px;height:56px;display:grid;place-items:center;background:#EEF2FF;border-radius:14px;flex:none}
+.it.promo .em{background:#FFE9AE}
+.it .tx{flex:1;min-width:0}
+.it b{display:block;font-size:16px;line-height:1.2}
+.it small{display:block;color:var(--mut);font-size:13px;margin-top:3px}
+.it .pr{font-family:Oswald,Impact,sans-serif;font-size:22px;color:var(--blue2);margin-top:4px;line-height:1}
+.it .pr em{font-style:normal;font-family:system-ui,sans-serif;font-size:12px;color:var(--mut);margin-left:6px}
+.it.off{opacity:.5}
+.add{width:44px;height:44px;border-radius:12px;border:0;background:var(--blue);color:#fff;font-size:26px;font-weight:700;flex:none}
+.qty{display:flex;align-items:center;gap:4px;flex:none}
+.qty button{width:36px;height:36px;border-radius:10px;border:0;background:#E8EEFF;color:var(--blue2);font-size:20px;font-weight:700}
+.qty span{min-width:24px;text-align:center;font-weight:800}
+.tag{display:inline-block;font-size:11px;font-weight:700;border-radius:6px;padding:2px 7px;background:#FDECEA;color:var(--red);margin-top:4px}
+.bar{position:fixed;left:12px;right:12px;bottom:calc(12px + env(safe-area-inset-bottom));z-index:20;max-width:876px;margin:0 auto;background:var(--blue);color:#fff;border:0;border-radius:16px;padding:14px 16px;display:flex;align-items:center;gap:12px;box-shadow:0 12px 30px -8px rgba(31,79,224,.65);text-align:left}
+.bar .n{background:var(--gold);color:var(--navy);font-weight:800;border-radius:10px;padding:4px 10px}
+.bar .t{margin-left:auto;text-align:right;line-height:1.1}
+.bar .t b{font-family:Oswald,Impact,sans-serif;font-size:22px}
+.bar .t small{display:block;color:#C9D6FF;font-size:12px}
+.bar[hidden]{display:none}
+footer{text-align:center;color:var(--mut);font-size:13px;padding:24px 14px 10px}
+footer b{color:var(--ink)}
+/* hoja */
+.modal{position:fixed;inset:0;z-index:40;background:rgba(10,14,32,.55);display:flex;align-items:flex-end;justify-content:center}
+.modal[hidden]{display:none}
+.sheet{background:#fff;width:100%;max-width:560px;max-height:94vh;overflow:auto;border-radius:20px 20px 0 0;padding:16px 16px calc(18px + env(safe-area-inset-bottom));animation:up .2s ease-out}
+@media(min-width:700px){.modal{align-items:center}.sheet{border-radius:20px}}
+@keyframes up{from{transform:translateY(40px);opacity:0}to{transform:none;opacity:1}}
+.sh{display:flex;align-items:center;margin-bottom:6px}
+.sh h3{margin:0;flex:1;font-family:Oswald,Impact,sans-serif;text-transform:uppercase;font-size:24px}
+.x{border:0;background:var(--bg);width:38px;height:38px;border-radius:50%;font-size:22px}
+.li{display:flex;gap:10px;align-items:center;padding:10px 0;border-bottom:1px solid var(--line)}
+.li .grow{flex:1;min-width:0}
+.mut{color:var(--mut)}
+label.lb{display:block;font-size:12.5px;font-weight:700;color:var(--mut);margin:14px 0 5px;text-transform:uppercase;letter-spacing:.04em}
+.in{width:100%;border:1px solid var(--line);border-radius:12px;padding:12px;background:#fff;font-size:16px}
+.in:focus{outline:2px solid var(--blue);border-color:transparent}
+.in.err{border-color:var(--red);background:#FFF5F4}
+.seg{display:flex;background:#E8EEFF;border-radius:12px;padding:4px;gap:4px}
+.seg button{flex:1;border:0;background:none;border-radius:9px;padding:11px 4px;font-weight:700;color:var(--blue2)}
+.seg button.on{background:#fff;color:var(--ink);box-shadow:0 1px 3px rgba(0,0,0,.12)}
+.pays{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.pays button{border:1px solid var(--line);background:#fff;border-radius:12px;padding:12px 8px;font-weight:700;font-size:14px}
+.pays button.on{border:2px solid var(--blue);background:#EEF2FF;color:var(--blue2)}
+.tot{background:var(--navy);color:#fff;border-radius:14px;padding:12px 14px;margin:14px 0;display:flex;justify-content:space-between;align-items:center}
+.tot b{font-family:Oswald,Impact,sans-serif;font-size:28px;color:var(--gold)}
+.tot small{display:block;color:#C9D6FF;font-size:12px;text-align:right}
+.wa{width:100%;border:0;border-radius:14px;padding:16px;background:var(--green);color:#063;font-family:Oswald,Impact,sans-serif;font-size:20px;text-transform:uppercase;letter-spacing:.03em;display:flex;align-items:center;justify-content:center;gap:10px;color:#fff}
+.wa svg{width:26px;height:26px}
+.chk{display:flex;gap:10px;align-items:flex-start;margin-top:14px;font-size:14px;color:var(--mut)}
+.chk input{width:20px;height:20px;accent-color:var(--blue);margin-top:1px;flex:none}
+.note{font-size:12.5px;color:var(--mut);margin-top:10px;text-align:center}
+.lnk{background:none;border:0;color:var(--blue2);font-weight:600;font-size:13px;padding:2px 0;text-decoration:underline}
+#toast{position:fixed;left:50%;bottom:100px;transform:translateX(-50%) translateY(20px);background:var(--navy);color:#fff;padding:12px 18px;border-radius:12px;font-weight:600;opacity:0;pointer-events:none;transition:.25s;z-index:60}
+#toast.show{opacity:1;transform:translateX(-50%)}
+</style>
+</head>
+<body>
+<header class="hero">
+  <div class="hin">
+    <img src="icons/logo.png" alt="Logo de Pérez Burguer">
+    <div>
+      <h1>Pérez Burguer<span>Sabor que te hace volver</span></h1>
+      <p>Arma tu pedido aquí y envíalo por WhatsApp. ¡Visítanos o pide delivery!</p>
+    </div>
+  </div>
+  <div class="info" id="info"></div>
+</header>
+<main>
+  <div id="againBox"></div>
+  <div class="chips" id="chips"></div>
+  <div id="menu"></div>
+  <footer id="foot"></footer>
+</main>
+<button class="bar" id="bar" hidden onclick="openCheckout()"><span class="n" id="barN">0</span><b>Ver mi pedido</b><span class="t"><b id="barT">$0</b><small id="barB"></small></span></button>
+<div class="modal" id="modal" hidden onclick="if(event.target===this)closeM()"><div class="sheet" id="sheet"></div></div>
+<div id="toast"></div>
+
+<script>
+/* Menú de respaldo: se usa si no se puede leer menu.json */
+const FALLBACK={negocio:'Pérez Burguer',whatsapp:'04245860069',direccion:'Carrera 17 entre calles 50 y 51, Barquisimeto',instagram:'@perez_burguer_14',tasa:0,tasaFecha:'',
+ metodos:['Pago móvil','Efectivo $','Efectivo Bs','Punto de venta','Zelle'],cats:['Promos','Hamburguesas','Perros','Pepitos','Acompañantes','Bebidas'],
+ products:[
+  {id:'p1',name:'Promo 3 hamburguesas + refresco 1 L',desc:'3 hamburguesas de chuleta ahumada + refresco de 1 litro',price:12,cat:'Promos',emoji:'🎉'},
+  {id:'p2',name:'Promo 3 burgers pollo crispy + refresco 1 L',desc:'3 burgers de pollo crispy + refresco de 1 litro',price:10,cat:'Promos',emoji:'🎉'},
+  {id:'p3',name:'Triple proteína',desc:'Pollo crispy, chuleta ahumada y carne de hamburguesa. ¡La más poderosa!',price:5.5,cat:'Hamburguesas',emoji:'🍔'},
+  {id:'p4',name:'Hamburguesa clásica',desc:'Carne jugosa, ingredientes frescos y mucho sabor',price:1.5,cat:'Hamburguesas',emoji:'🍔'},
+  {id:'p7',name:'Perro clásico',desc:'Clásico, sabroso y siempre delicioso',price:1,cat:'Perros',emoji:'🌭'},
+  {id:'p9',name:'Pepito de carne',desc:'Grande, lleno y lleno de sabor',price:5,cat:'Pepitos',emoji:'🥖'}]};
+
+const $=s=>document.querySelector(s);
+const esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const r2=n=>Math.round((+n||0)*100)/100;
+const usd=n=>'$'+(+n||0).toLocaleString('es-VE',{minimumFractionDigits:2,maximumFractionDigits:2});
+const bsf=n=>'Bs '+(+n||0).toLocaleString('es-VE',{minimumFractionDigits:2,maximumFractionDigits:2});
+const num=v=>{v=String(v||'').trim().replace(/\s/g,'');if(v.includes(',')&&v.includes('.'))v=v.replace(/\./g,'').replace(',','.');else v=v.replace(',','.');return parseFloat(v)||0};
+const today=()=>new Date().toLocaleDateString('sv');
+function toast(m){const t=$('#toast');t.textContent=m;t.classList.add('show');clearTimeout(t._h);t._h=setTimeout(()=>t.classList.remove('show'),2200)}
+const store={get(k,d){try{return JSON.parse(localStorage.getItem('pb_'+k))??d}catch(e){return d}},set(k,v){try{localStorage.setItem('pb_'+k,JSON.stringify(v))}catch(e){}}};
+
+const TEST=new URLSearchParams(location.search).get('prueba');
+let M=FALLBACK,TASA=0,TASA_SRC='',CAT='Todo';
+let cart=store.get('cart',[]); // [{id,qty}]
+let me=Object.assign({name:'',phone:'',type:'Delivery',address:'',ref:'',pay:'',cash:'',notes:'',remember:true},store.get('me',{}));
+const P=id=>M.products.find(p=>p.id===id);
+const waNum=p=>{const raw=String(p||'').trim();let d=raw.replace(/\D/g,'');if(raw.startsWith('+'))return d;if(d.startsWith('00'))return d.slice(2);if(d.startsWith('0'))return '58'+d.slice(1);if(d.length===10&&d.startsWith('4'))return '58'+d;return d};
+
+async function loadMenu(){
+  try{const r=await fetch('menu.json?t='+Date.now(),{cache:'no-store'});if(r.ok){const d=await r.json();if(d&&d.products&&d.products.length)M=d}}catch(e){}
+  if(M.tasa&&M.tasaFecha===today()){TASA=M.tasa;TASA_SRC='del día'}
+  // Intento opcional de tasa oficial; si falla, se muestran solo dólares
+  if(!TASA){try{const c=new AbortController();setTimeout(()=>c.abort(),4000);const r=await fetch('https://ve.dolarapi.com/v1/dolares/oficial',{signal:c.signal});if(r.ok){const d=await r.json();const v=+d.promedio;if(v>0){TASA=v;TASA_SRC='BCV'}}}catch(e){}}
+  cart=cart.filter(i=>P(i.id)&&!P(i.id).agotado);render()}
+
+function render(){
+  $('#info').innerHTML='<a href="https://wa.me/'+waNum(M.whatsapp)+'" target="_blank" rel="noopener">📞 '+esc(M.whatsapp)+'</a><span>📍 '+esc(M.direccion)+'</span>'+(M.instagram?'<a href="https://instagram.com/'+esc(M.instagram.replace('@',''))+'" target="_blank" rel="noopener">📷 '+esc(M.instagram)+'</a>':'');
+  const cats=M.cats.filter(c=>M.products.some(p=>p.cat===c));
+  $('#chips').innerHTML=['Todo',...cats].map(c=>'<button class="chip '+(c===CAT?'on':'')+'" onclick="goCat(\''+esc(c)+'\')">'+esc(c)+'</button>').join('');
+  $('#menu').innerHTML=cats.map(c=>'<h2 class="cat" id="c_'+esc(c)+'">'+esc(c)+'</h2><div class="items">'+M.products.filter(p=>p.cat===c).map(item).join('')+'</div>').join('');
+  const last=store.get('last',null);
+  $('#againBox').innerHTML=last&&!cart.length&&last.items.some(i=>P(i.id))?'<button class="again" onclick="repeat()"><span style="font-size:26px">🔁</span><span>Repetir mi último pedido<br><small class="mut" style="font-weight:500">'+esc(last.items.filter(i=>P(i.id)).map(i=>i.qty+'× '+P(i.id).name).join(', ')).slice(0,90)+'</small></span></button>':'';
+  $('#foot').innerHTML='<b>'+esc(M.negocio)+'</b><br>'+esc(M.direccion)+'<br>'+(TASA?'Precios en dólares. Bs calculados a la tasa '+TASA_SRC+': '+bsf(TASA)+' por $.':'Precios en dólares. Puedes pagar en bolívares a la tasa del día.')+'<br><a class="lnk" href="caja/">Acceso del personal</a>';
+  if(TEST&&!document.getElementById('testBan')){const d=document.createElement('div');d.id='testBan';d.style.cssText='position:sticky;top:0;z-index:30;background:#FFE14D;color:#0A0E20;font-weight:700;text-align:center;padding:8px;font-size:14px';d.textContent='MODO PRUEBA · los pedidos se envían a +'+TEST.replace(/\D/g,'');document.body.prepend(d)}
+  bar()}
+function item(p){const q=(cart.find(i=>i.id===p.id)||{}).qty||0;
+  return '<div class="it '+(p.cat==='Promos'?'promo ':'')+(p.agotado?'off':'')+'"><div class="em">'+esc(p.emoji||'🍔')+'</div><div class="tx"><b>'+esc(p.name)+'</b>'+(p.desc?'<small>'+esc(p.desc)+'</small>':'')+'<div class="pr">'+usd(p.price)+(TASA?'<em>'+bsf(r2(p.price*TASA))+'</em>':'')+'</div>'+(p.agotado?'<span class="tag">Agotado por hoy</span>':'')+'</div>'+
+  (p.agotado?'':q?'<div class="qty"><button onclick="add(\''+p.id+'\',-1)" aria-label="Quitar">−</button><span>'+q+'</span><button onclick="add(\''+p.id+'\',1)" aria-label="Añadir">+</button></div>':'<button class="add" onclick="add(\''+p.id+'\',1)" aria-label="Añadir '+esc(p.name)+'">+</button>')+'</div>'}
+function goCat(c){CAT=c;document.querySelectorAll('.chip').forEach(b=>b.classList.toggle('on',b.textContent===c));if(c==='Todo')scrollTo({top:0,behavior:'smooth'});else document.getElementById('c_'+c)?.scrollIntoView({behavior:'smooth'})}
+function add(id,d){let it=cart.find(i=>i.id===id);if(!it){it={id,qty:0};cart.push(it)}it.qty+=d;if(it.qty<=0)cart=cart.filter(i=>i!==it);store.set('cart',cart);if(navigator.vibrate&&d>0)navigator.vibrate(12);
+  const y=scrollY;render();scrollTo(0,y);if(!$('#modal').hidden)openCheckout()}
+const total=()=>r2(cart.reduce((s,i)=>s+(P(i.id)?P(i.id).price*i.qty:0),0));
+const count=()=>cart.reduce((s,i)=>s+i.qty,0);
+function bar(){const n=count();$('#bar').hidden=!n;$('#barN').textContent=n;$('#barT').textContent=usd(total());$('#barB').textContent=TASA?bsf(r2(total()*TASA)):''}
+function repeat(){const last=store.get('last',null);if(!last)return;cart=last.items.filter(i=>P(i.id)&&!P(i.id).agotado).map(i=>({id:i.id,qty:i.qty}));store.set('cart',cart);render();openCheckout()}
+
+/* ---------- Checkout ---------- */
+function closeM(){saveForm();$('#modal').hidden=true}
+function openCheckout(){if(!count()){closeM();return}saveForm();
+  const t=total();
+  let h='<div class="sh"><h3>Tu pedido</h3><button class="x" onclick="closeM()" aria-label="Cerrar">×</button></div>';
+  h+=cart.map(i=>{const p=P(i.id);return '<div class="li"><div class="grow"><b>'+esc(p.name)+'</b><div class="mut" style="font-size:13px">'+usd(p.price)+' c/u</div></div><div class="qty"><button onclick="add(\''+p.id+'\',-1)">−</button><span>'+i.qty+'</span><button onclick="add(\''+p.id+'\',1)">+</button></div></div>'}).join('');
+  h+='<button class="lnk" style="margin-top:8px" onclick="closeM()">+ Añadir más cosas</button>';
+  h+='<label class="lb">¿Cómo lo quieres?</label><div class="seg">'+['Delivery','Retiro en el local'].map(x=>'<button class="'+(me.type===x?'on':'')+'" onclick="setF(\'type\',\''+x+'\')">'+(x==='Delivery'?'🛵 ':'🏪 ')+x+'</button>').join('')+'</div>';
+  h+='<label class="lb">Tu nombre</label><input class="in" id="f_name" autocomplete="name" value="'+esc(me.name)+'" placeholder="Nombre y apellido">';
+  h+='<label class="lb">Tu WhatsApp</label><input class="in" id="f_phone" type="tel" autocomplete="tel" inputmode="tel" value="'+esc(me.phone)+'" placeholder="0414 1234567"><small class="mut" style="font-size:12px">Si no es de Venezuela, ponlo con el prefijo del país, p. ej. +34 612 345 678</small>';
+  if(me.type==='Delivery')h+='<label class="lb">Dirección de entrega</label><input class="in" id="f_address" autocomplete="street-address" value="'+esc(me.address)+'" placeholder="Calle, carrera, casa o edificio"><label class="lb">Punto de referencia</label><input class="in" id="f_ref" value="'+esc(me.ref)+'" placeholder="Ej. frente a la panadería, portón negro">';
+  h+='<label class="lb">¿Cómo vas a pagar?</label><div class="pays">'+M.metodos.map(m=>'<button class="'+(me.pay===m?'on':'')+'" onclick="setF(\'pay\',\''+esc(m)+'\')">'+esc(m)+'</button>').join('')+'</div>';
+  if(me.pay==='Efectivo $')h+='<label class="lb">¿Con cuánto vas a pagar? (para llevarte el vuelto)</label><input class="in" id="f_cash" inputmode="decimal" value="'+esc(me.cash)+'" placeholder="Ej. 20">';
+  h+='<label class="lb">Notas (opcional)</label><input class="in" id="f_notes" value="'+esc(me.notes)+'" placeholder="Ej. una sin cebolla, salsas aparte">';
+  h+='<div class="tot"><span>Total'+(me.type==='Delivery'?'<br><small style="text-align:left">+ delivery (te lo confirmamos)</small>':'')+'</span><span><b>'+usd(t)+'</b>'+(TASA?'<small>'+bsf(r2(t*TASA))+'</small>':'')+'</span></div>';
+  h+='<button class="wa" onclick="send()"><svg viewBox="0 0 24 24" fill="#fff"><path d="M12 2a10 10 0 00-8.6 15.1L2 22l5-1.3A10 10 0 1012 2zm0 18.2a8.2 8.2 0 01-4.2-1.2l-.3-.2-3 .8.8-2.9-.2-.3A8.2 8.2 0 1112 20.2zm4.5-6.1c-.2-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.2-.5.1a6.7 6.7 0 01-3.3-2.9c-.3-.4.3-.4.7-1.4.1-.2 0-.3 0-.4l-.8-1.8c-.2-.5-.4-.4-.6-.4h-.5a1 1 0 00-.7.3 3 3 0 00-.9 2.2 5.2 5.2 0 001.1 2.7 11.8 11.8 0 004.5 4c1.7.7 2.3.8 3.2.6.5-.1 1.5-.6 1.7-1.2s.2-1.1.1-1.2-.2-.2-.4-.3z"/></svg>Enviar pedido por WhatsApp</button>';
+  h+='<label class="chk"><input type="checkbox" id="f_rem" '+(me.remember?'checked':'')+'><span>Recordar mis datos en este teléfono para la próxima vez. Solo se guardan aquí y se usan para tu pedido.'+(store.get('me',null)?' <button class="lnk" onclick="forget()">Borrar mis datos</button>':'')+'</span></label>';
+  h+='<p class="note">Al enviar se abre WhatsApp con tu pedido listo. Tu pedido queda confirmado cuando te respondamos.</p>';
+  $('#sheet').innerHTML=h;$('#modal').hidden=false}
+const FIELDS=['name','phone','address','ref','cash','notes'];
+function saveForm(){FIELDS.forEach(k=>{const e=$('#f_'+k);if(e)me[k]=e.value.trim()});const r=$('#f_rem');if(r)me.remember=r.checked;if(me.remember)store.set('me',me)}
+function setF(k,v){saveForm();me[k]=v;openCheckout()}
+function forget(){try{localStorage.removeItem('pb_me');localStorage.removeItem('pb_last')}catch(e){}me={name:'',phone:'',type:'Delivery',address:'',ref:'',pay:'',cash:'',notes:'',remember:false};toast('Tus datos se han borrado de este teléfono');openCheckout();render()}
+function send(){saveForm();
+  const need=[['name','Escribe tu nombre'],['phone','Escribe tu WhatsApp']];if(me.type==='Delivery')need.push(['address','Escribe la dirección de entrega']);
+  for(const [k,m] of need){if(!me[k]){const e=$('#f_'+k);e.classList.add('err');e.focus();toast(m);return}}
+  if(String(me.phone).replace(/\D/g,'').length<9){$('#f_phone').classList.add('err');toast('Revisa el número de WhatsApp');return}
+  if(!me.pay){toast('Elige cómo vas a pagar');return}
+  const t=total();let m='*Nuevo pedido · '+M.negocio+'*\n\n';
+  cart.forEach(i=>{const p=P(i.id);m+='▪️ '+i.qty+' × '+p.name+' — '+usd(p.price*i.qty)+'\n'});
+  m+='\n*Total: '+usd(t)+'*'+(TASA?' ('+bsf(r2(t*TASA))+')':'')+(me.type==='Delivery'?' + delivery':'')+'\n\n';
+  m+='👤 '+me.name+'\n📱 '+me.phone+'\n';
+  m+=me.type==='Delivery'?'🛵 *Delivery*\n📍 '+me.address+(me.ref?'\n🧭 Ref.: '+me.ref:'')+'\n':'🏪 *Retiro en el local*\n';
+  m+='💳 Pago: '+me.pay;const cash=num(me.cash);if(me.pay==='Efectivo $'&&cash>0)m+=' (paga con '+usd(cash)+(cash>t?', vuelto '+usd(cash-t):'')+')';
+  if(me.notes)m+='\n📝 '+me.notes;
+  store.set('last',{at:Date.now(),items:cart.map(i=>({id:i.id,qty:i.qty}))});
+  const url='https://wa.me/'+(TEST?waNum('+'+TEST.replace(/\D/g,'')):waNum(M.whatsapp))+'?text='+encodeURIComponent(m);
+  window.open(url,'_blank');
+  cart=[];store.set('cart',cart);closeM();render();
+  setTimeout(()=>toast('¡Pedido listo en WhatsApp! Solo pulsa enviar.'),400)}
+loadMenu();render();
+</script>
+</body>
+</html>
